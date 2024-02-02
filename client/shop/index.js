@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const listaDeProductos = data.message;
             
             listaDeProductos.forEach(element => {
-                let cardProduct = `
+                let cardProduct = () => `
                     <div class="col-md-4">
                     <div class="card mb-4 product-wap rounded-0">
                         <div class="card rounded-0">
@@ -47,7 +47,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     </div>
                 </div>
             `
-                containerCardProducts.append(cardProduct);
+               return containerCardProducts.insertAdjacentHTML('beforeend', cardProduct());
             });
             console.log(data)
             //imprimir la imagen de banner02 y banner03
